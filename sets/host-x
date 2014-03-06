@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+[ "$(hostname -s)" == "$(basename ${0/host-})" ] || exit
+
+$PIRANHA_RUNNER check tests/noclear tty1
+$PIRANHA_RUNNER check tests/noclear tty2

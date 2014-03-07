@@ -4,3 +4,5 @@ ${PIRANHA:-piranha} check inittab/noclear tty1
 ${PIRANHA:-piranha} check sshd/upandrunning
 ${PIRANHA:-piranha} check sets/udev
 ${PIRANHA:-piranha} check sets/gentoo/lore
+${PIRANHA:-piranha} check gentoo/portageq/unary distdir /var/cache/distfiles
+${PIRANHA:-piranha} check gentoo/portageq/unary pkgdir /var/cache/packages

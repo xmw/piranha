@@ -2,4 +2,4 @@
 
 [ $# -eq 1 ] || exit 1
 
-pgrep -x $1
+pgrep -x $1 >/dev/null

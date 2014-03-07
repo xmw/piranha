@@ -1,0 +1,3 @@
+#!/bin/sh
+
+${PIRANHA_RUNNER:-piranha} check kernel/cmdline net.ifnames=0

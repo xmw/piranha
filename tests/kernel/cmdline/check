@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ $# -eq 1 ] || exit 1
+
+egrep "(^|\s)$1(\s|$)" /proc/cmdline

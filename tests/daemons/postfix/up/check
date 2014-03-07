@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ $# == 0 ] || die
+
+postfix status 2>/dev/null

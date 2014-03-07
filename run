@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ -z "$PIRANHA_RUNNER" ] ; then
-	export PIRANHA_RUNNER=$(realpath "$0")
-	cd $(dirname $PIRANHA_RUNNER)
+if [ -z "$PIRANHA" ] ; then
+	export PIRANHA=$(realpath "$0")
+	cd $(dirname $PIRANHA)
 	export PIRANHA_LEVEL=""
 else
 	export PIRANHA_LEVEL="x ${PIRANHA_LEVEL}"

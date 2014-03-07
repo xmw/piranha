@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-$PIRANHA_RUNNER check inittab/noclear tty1
-$PIRANHA_RUNNER check sshd/keyonly
-$PIRANHA_RUNNER check sshd/upandrunning
-$PIRANHA_RUNNER check kernel/cmdline/netifnames
+${PIRANHA:-piranha} check inittab/noclear tty1
+${PIRANHA:-piranha} check sshd/keyonly
+${PIRANHA:-piranha} check sshd/upandrunning
+${PIRANHA:-piranha} check kernel/cmdline/netifnames

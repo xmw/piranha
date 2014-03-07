@@ -5,4 +5,6 @@ if [ "$1" == "not" ] ; then
 	shift 1
 fi
 
+[ $# -eq 2 ] || exit 1
+
 [ $inv -e /etc/runlevels/$2/$1 ]

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ $# -eq 2 ] || exit 1
+
+[ "$(portageq envvar $1)" == "$1" ]

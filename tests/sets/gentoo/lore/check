@@ -1,0 +1,4 @@
+#!/bin/sh
+
+${PIRANHA:-piranha} check gentoo/portageq/unary gentoo_mirrors https://lore.xmw.de/gentoo/
+${PIRANHA:-piranha} check gentoo/portageq/repository_configuration gentoo sync-uri rsync://lore.xmw.de/gentoo-portage/

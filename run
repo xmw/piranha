@@ -41,7 +41,10 @@ case "$mode" in
 			indent "$(tput setaf 1)failed$(tput sgr0) $stmt\n"
 		fi
 		;;
+	pull)
+		git pull
+		;;
 	*)
-		echo "not implemented, try $(basename $0) (check|...)"
+		echo "not implemented, try $(basename $0) (pull|check|...)"
 		;;
 esac

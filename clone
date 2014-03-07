@@ -5,4 +5,4 @@ git clone https://github.com/xmw/piranha.git ${subdir}
 cd ${subdir}
 git remote set-url --push origin git@github.com:xmw/piranha.git
 
-echo "you should run ln -s $(pwd)/${subdir}/run /usr/local/sbin/piranha"
+echo "you should run ln -s $(pwd)/run /usr/local/sbin/piranha"

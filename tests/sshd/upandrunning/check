@@ -3,6 +3,5 @@
 sshd -T >/dev/null || exit
 
 ${PIRANHA_RUNNER} check openrc/service sshd default
-${PIRANHA_RUNNER} check openrc/service not sshd default
 
 ${PIRANHA_RUNNER} check proc/running sshd

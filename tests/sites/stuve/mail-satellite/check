@@ -11,7 +11,7 @@ ${PIRANHA:-piranha} check daemons/postfix/postconf/unary \
 ${PIRANHA:-piranha} check daemons/postfix/postconf/unary \
 	relayhost smtp.fs.lmu.de
 ${PIRANHA:-piranha} check daemons/postfix/postconf/unary \
-	inet_protocols all
+	inet_protocols ipv4,ipv6
 ${PIRANHA:-piranha} check daemons/postfix/postalias root monitoring@fs.lmu.de
 ${PIRANHA:-piranha} check openrc/service postfix default
 ${PIRANHA:-piranha} check daemons/postfix/up

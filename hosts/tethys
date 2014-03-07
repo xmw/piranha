@@ -1,0 +1,3 @@
+#!/bin/sh
+
+$PIRANHA_RUNNER $1 tests/inittab/noclear tty1

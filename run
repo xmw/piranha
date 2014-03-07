@@ -1,0 +1,48 @@
+#!/bin/sh
+
+if [ -z "$PIRANHA_RUNNER" ] ; then
+	export PIRANHA_RUNNER=$(realpath "$0")
+	cd $(dirname $PIRANHA_RUNNER)
+	export PIRANHA_LEVEL=""
+else
+	export PIRANHA_LEVEL="x ${PIRANHA_LEVEL}"
+fi
+
+mode=$1
+shift 1
+
+indent() {
+	for i in ${PIRANHA_LEVEL} ; do
+		echo -ne "\t"
+	done
+	if [ $# -ne 0 ] ; then
+		echo -ne "$@"
+	fi
+} 
+
+case "$mode" in
+	check)
+		if [ $# -eq 0 ] ; then
+			cmd=hosts/$(hostname -s)
+		else
+			cmd=tests/$1
+			shift 1
+		fi
+		echo "$cmd"
+		if [ -d "$cmd" ] ; then
+			indent "$cmd/$mode $@ ...\n"
+			$cmd/$mode $@
+		else
+			indent "$cmd $mode $@ ...\n"
+			$cmd $mode $@
+		fi
+		if [ $? -eq 0 ] ; then
+			indent "passed\n"
+		else
+			indent "failed\n"
+		fi
+		;;
+	*)
+		echo "not implemented, try $(basename $0) (check|...)"
+		;;
+esac

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "$1" == "not" ] ; then
+	inv="!"
+	shift 1
+fi
+
+[ $inv -e /etc/runlevels/$2/$1 ]

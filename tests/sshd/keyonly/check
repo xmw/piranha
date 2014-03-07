@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ -z "$@" ] || exit 1
+${PIRANHA_RUNNER} check sshd rhostsrsaauthentication no
+${PIRANHA_RUNNER} check sshd hostbasedauthentication no
+${PIRANHA_RUNNER} check sshd rsaauthentication yes
+${PIRANHA_RUNNER} check sshd pubkeyauthentication yes
+${PIRANHA_RUNNER} check sshd passwordauthentication no
+${PIRANHA_RUNNER} check sshd kbdinteractiveauthentication no
+${PIRANHA_RUNNER} check sshd challengeresponseauthentication no
+

@@ -23,23 +23,22 @@ indent() {
 case "$mode" in
 	check)
 		if [ $# -eq 0 ] ; then
-			cmd=hosts/$(hostname -s)
+			cmd=hosts/$(hostname)
 		else
 			cmd=tests/$1
 			shift 1
 		fi
-		echo "$cmd"
 		if [ -d "$cmd" ] ; then
-			indent "$cmd/$mode $@ ...\n"
+			stmt="$cmd/$mode $@"
 			$cmd/$mode $@
 		else
-			indent "$cmd $mode $@ ...\n"
+			stmt="$cmd $mode $@"
 			$cmd $mode $@
 		fi
 		if [ $? -eq 0 ] ; then
-			indent "passed\n"
+			indent "$(tput setaf 2)passed$(tput sgr0) $stmt\n"
 		else
-			indent "failed\n"
+			indent "$(tput setaf 1)failed$(tput sgr0) $stmt\n"
 		fi
 		;;
 	*)

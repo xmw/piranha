@@ -1,0 +1,5 @@
+#!/bin/sh
+
+${PIRANHA:-piranha} check file/absent /etc/udev/rules.d/70-persistent-net.rules 
+${PIRANHA:-piranha} check file/absent /etc/udev/rules.d/80-net-name-slot.rules
+${PIRANHA:-piranha} check kernel/cmdline/netifnames

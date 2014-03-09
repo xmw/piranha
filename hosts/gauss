@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 
 ${PIRANHA:-piranha} check inittab/noclear tty1
 ${PIRANHA:-piranha} check sshd/upandrunning

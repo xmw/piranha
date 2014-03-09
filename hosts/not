@@ -1,6 +1,7 @@
-#!/bin/sh -e
+#!/bin/sh
 
 ${PIRANHA:-piranha} check inittab/noclear tty1
+${PIRANHA:-piranha} check sshd/keyonly
 ${PIRANHA:-piranha} check sshd/upandrunning
 ${PIRANHA:-piranha} check sets/udev
 ${PIRANHA:-piranha} check sets/gentoo/lore

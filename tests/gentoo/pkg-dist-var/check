@@ -1,0 +1,7 @@
+#!/bin/sh
+
+
+${PIRANHA:-piranha} check gentoo/portageq/unary distdir /var/cache/distfiles
+${PIRANHA:-piranha} check file/absent /usr/portage/distfiles
+${PIRANHA:-piranha} check gentoo/portageq/unary pkgdir /var/cache/packages
+${PIRANHA:-piranha} check file/absent /usr/portage/packages

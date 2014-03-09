@@ -12,7 +12,7 @@ ${PIRANHA:-piranha} check daemons/postfix/postconf/unary \
 	relayhost smtp.xmw.de
 ${PIRANHA:-piranha} check daemons/postfix/postconf/unary \
 	inet_protocols ipv4,ipv6
-${PIRANHA:-piranha} check daemons/postfix/postalias root root@xmw.de
+${PIRANHA:-piranha} check daemons/postfix/postalias root monitoring@xmw.de
 ${PIRANHA:-piranha} check openrc/service postfix default
 ${PIRANHA:-piranha} check daemons/postfix/up
 

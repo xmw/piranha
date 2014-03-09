@@ -1,3 +1,6 @@
 #!/bin/sh
 
-${PIRANHA:-piranha} $1 tests/inittab/noclear tty1
+${PIRANHA:-piranha} check inittab/noclear tty1
+${PIRANHA:-piranha} check sshd/keyonly
+${PIRANHA:-piranha} check sshd/upandrunning
+${PIRANHA:-piranha} check kernel/cmdline/netifnames

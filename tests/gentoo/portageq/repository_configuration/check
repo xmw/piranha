@@ -1,6 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 [ $# -eq 3 ] || exit 1
 
-output=$(portageq repositories_configuration / | awk 'BEGIN {a=0} {if (substr($1, 0, 1)=="[") {a=0} ; if ($1=="['$1']") {a=1} ; if (a==1 && $1=="'$2'") {print $3}}')
+#output=$(portageq repositories_configuration / | awk 'BEGIN {a=0} {if (substr($1, 0, 1)=="[") {a=0} ; if ($1=="['$1']") {a=1} ; if (a==1 && $1=="'$2'") {print $3}}')
+
+PORTAGE_REPOSITORIES=$(portageq repositories_configuration /)
+source /usr/lib/portage/bin/isolated-functions.sh
+output=$(__repo_key $1 $2)
+
 [ "$output" == "$3" ]

@@ -4,6 +4,7 @@ ${PIRANHA:-piranha} check inittab/noclear tty1
 ${PIRANHA:-piranha} check sshd/keyonly
 ${PIRANHA:-piranha} check sshd/upandrunning
 ${PIRANHA:-piranha} check sets/udev
-${PIRANHA:-piranha} check sets/gentoo/lore
+${PIRANHA:-piranha} check gentoo/portageq/unary gentoo_mirrors https://lore.xmw.de/gentoo/
+${PIRANHA:-piranha} check gentoo/portageq/repository_configuration gentoo sync-uri cvs://xmw@cvs.gentoo.org:/var/cvsroot
 ${PIRANHA:-piranha} check gentoo/pkg-dist-var
 ${PIRANHA:-piranha} check sites/xmw.de/mail-satellite

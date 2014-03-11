@@ -7,3 +7,6 @@ ${PIRANHA:-piranha} check sets/udev
 ${PIRANHA:-piranha} check sets/gentoo/lore
 ${PIRANHA:-piranha} check gentoo/pkg-dist-var
 ${PIRANHA:-piranha} check sites/stuve/mail-satellite
+${PIRANHA:-piranha} check gentoo/portageq/envvar EMERGE_DEFAULT_OPTS "--buildpkg y"
+${PIRANHA:-piranha} check gentoo/portageq/envvar EMERGE_DEFAULT_OPTS "--keep-going --binpkg-respect-use y --getbinpkg y"
+${PIRANHA:-piranha} check gentoo/portageq/envvar PORTAGE_BINHOST "ssh://nor/var/cache/packages"

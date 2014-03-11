@@ -30,10 +30,10 @@ case "$mode" in
 		fi
 		if [ -d "$cmd" ] ; then
 			stmt="$cmd/$mode $@"
-			$cmd/$mode $@
+			$cmd/$mode "$@"
 		else
 			stmt="$cmd $mode $@"
-			$cmd $mode $@
+			$cmd $mode "$@"
 		fi
 		if [ $? -eq 0 ] ; then
 			indent "$(tput setaf 2)passed$(tput sgr0) $stmt\n"
